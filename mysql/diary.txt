@@ -1,0 +1,16 @@
+create database `diary` DEFAULT CHARACTER SET utf8 ;
+
+drop table if exists diary_log;
+
+/*==============================================================*/
+/* Table: diary_log                                             */
+/*==============================================================*/
+create table diary_log
+(
+   id                   int not null auto_increment comment 'id',
+   diary_date           date comment '日期',
+   content              text comment '内容',
+   primary key (id)
+);
+
+alter table diary_log comment '日志表';

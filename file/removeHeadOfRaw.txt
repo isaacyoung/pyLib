@@ -1,0 +1,234 @@
+1.# Welcome to Leanote! 欢迎来到Leanote!
+2. 
+3.## 1. 排版
+4. 
+5.**粗体** *斜体* 
+6. 
+7.~~这是一段错误的文本。~~
+8. 
+9.引用:
+10. 
+11.> 引用Leanote官方的话, 为什么要做Leanote, 原因是...
+12. 
+13.有充列表:
+14. 1. 支持Vim
+15. 2. 支持Emacs
+16. 
+17.无序列表:
+18. 
+19. - 项目1
+20. - 项目2
+21. 
+22. 
+23.## 2. 图片与链接
+24. 
+25.图片:
+26.![leanote](http://leanote.com/images/logo/leanote_icon_blue.png)
+27.链接:
+28. 
+29.[这是去往Leanote官方博客的链接](http://leanote.leanote.com)
+30. 
+31.## 3. 标题
+32. 
+33.以下是各级标题, 最多支持5级标题
+34. 
+35.```
+36.# h1
+37.## h2
+38.### h3
+39.#### h4
+40.##### h4
+41.###### h5
+42.```
+43. 
+44.## 4. 代码
+45. 
+46.示例:
+47. 
+48.    function get(key) {
+49.        return m[key];
+50.    }
+51.    
+52.代码高亮示例:
+53. 
+54.``` javascript
+55./**
+56.* nth element in the fibonacci series.
+57.* @param n >= 0
+58.* @return the nth element, >= 0.
+59.*/
+60.function fib(n) {
+61.  var a = 1, b = 1;
+62.  var tmp;
+63.  while (--n >= 0) {
+64.    tmp = a;
+65.    a += b;
+66.    b = tmp;
+67.  }
+68.  return a;
+69.}
+70. 
+71.document.write(fib(10));
+72.```
+73. 
+74.```python
+75.class Employee:
+76.   empCount = 0
+77. 
+78.   def __init__(self, name, salary):
+79.        self.name = name
+80.        self.salary = salary
+81.        Employee.empCount += 1
+82.```
+83. 
+84.# 5. Markdown 扩展
+85. 
+86.Markdown 扩展支持:
+87. 
+88.* 表格
+89.* 定义型列表
+90.* Html 标签
+91.* 脚注
+92.* todo list
+93.* 目录
+94.* 时序图与流程图
+95.* MathJax 公式
+96. 
+97.## 5.1 表格
+98. 
+99.Item     | Value
+100.-------- | ---
+101.Computer | \$1600
+102.Phone    | \$12
+103.Pipe     | \$1
+104. 
+105.可以指定对齐方式, 如Item列左对齐, Value列右对齐, Qty列居中对齐
+106. 
+107.| Item     | Value | Qty   |
+108.| :------- | ----: | :---: |
+109.| Computer | \$1600 |  5    |
+110.| Phone    | \$12   |  12   |
+111.| Pipe     | \$1    |  234  |
+112. 
+113. 
+114.## 5.2 定义型列表
+115. 
+116.名词 1
+117.:   定义 1（左侧有一个可见的冒号和四个不可见的空格）
+118. 
+119.代码块 2
+120.:   这是代码块的定义（左侧有一个可见的冒号和四个不可见的空格）
+121. 
+122.        代码块（左侧有八个不可见的空格）
+123. 
+124.## 5.3 Html 标签
+125. 
+126.支持在 Markdown 语法中嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：
+127. 
+128.    <table>
+129.        <tr>
+130.            <th rowspan="2">值班人员</th>
+131.            <th>星期一</th>
+132.            <th>星期二</th>
+133.            <th>星期三</th>
+134.        </tr>
+135.        <tr>
+136.            <td>李强</td>
+137.            <td>张明</td>
+138.            <td>王平</td>
+139.        </tr>
+140.    </table>
+141. 
+142. 
+143.<table>
+144.    <tr>
+145.        <th rowspan="2">值班人员</th>
+146.        <th>星期一</th>
+147.        <th>星期二</th>
+148.        <th>星期三</th>
+149.    </tr>
+150.    <tr>
+151.        <td>李强</td>
+152.        <td>张明</td>
+153.        <td>王平</td>
+154.    </tr>
+155.</table>
+156. 
+157.**提示**, 如果想对图片的宽度和高度进行控制, 你也可以通过img标签, 如:
+158. 
+159.<img src="http://leanote.com/images/logo/leanote_icon_blue.png" width="50px" />
+160. 
+161.## 5.4 脚注
+162. 
+163.Leanote[^footnote]来创建一个脚注
+164.  [^footnote]: Leanote是一款强大的开源云笔记产品.
+165.  
+166.## 5.5 todo list
+167. 
+168.Leanote 近期任务安排:
+169. 
+170.- [x] bbs 维护
+171.- [ ] Desktop 发布新版
+172.    - [x] Markdown编辑器添加Todo list
+173.    - [x] 修复白屏问题
+174.    - [ ] 修复issue3
+175.- [ ] Leanote 维护
+176.    - [ ] 修复issue4
+177. 
+178.## 5.6 目录
+179. 
+180.通过 `[TOC]` 在文档中插入目录, 如:
+181. 
+182.[TOC]
+183. 
+184.## 5.7 时序图与流程图
+185. 
+186.```sequence
+187.Alice->Bob: Hello Bob, how are you?
+188.Note right of Bob: Bob thinks
+189.Bob-->Alice: I am good thanks!
+190.```
+191. 
+192.流程图:
+193. 
+194.```flow
+195.st=>start: Start
+196.e=>end
+197.op=>operation: My Operation
+198.cond=>condition: Yes or No?
+199. 
+200.st->op->cond
+201.cond(yes)->e
+202.cond(no)->op
+203.```
+204. 
+205.> **提示:** 更多关于时序图与流程图的语法请参考:
+206. 
+207.> - [时序图语法](http://bramp.github.io/js-sequence-diagrams/)
+208.> - [流程图语法](http://adrai.github.io/flowchart.js)
+209. 
+210.## 5.8 MathJax 公式
+211. 
+212.$ 表示行内公式： 
+213. 
+214.质能守恒方程可以用一个很简洁的方程式 $E=mc^2$ 来表达。
+215. 
+216.$$ 表示整行公式：
+217. 
+218.$$\sum_{i=1}^n a_i=0$$
+219. 
+220.$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
+221. 
+222.$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$
+223. 
+224.更复杂的公式:
+225.$$
+226.\begin{eqnarray}
+227.\vec\nabla \times (\vec\nabla f) & = & 0  \cdots\cdots梯度场必是无旋场\\
+228.\vec\nabla \cdot(\vec\nabla \times \vec F) & = & 0\cdots\cdots旋度场必是无散场\\
+229.\vec\nabla \cdot (\vec\nabla f) & = & {\vec\nabla}^2f\\
+230.\vec\nabla \times(\vec\nabla \times \vec F) & = & \vec\nabla(\vec\nabla \cdot \vec F) - {\vec\nabla}^2 \vec F\\
+231.\end{eqnarray}
+232.$$
+233. 
+234.访问 [MathJax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) 参考更多使用方法。
