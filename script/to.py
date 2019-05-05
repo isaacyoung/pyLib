@@ -7,10 +7,10 @@ if argCount == 1:
     exit(0)
 
 key = sys.argv[1]
-if key in ["help","-help","--help"]:
+if key in ["help", "-help", "--help"]:
     print("params list:")
-    print("%10s"%"dp|deply", "to deply file folder", sep=" --> ")
-    print("%10s"%"out", "to packup out file folder", sep=" --> ")
+    print("%10s" % "dp|deply", "to deply file folder", sep=" --> ")
+    print("%10s" % "out", "to packup out file folder", sep=" --> ")
     exit(0)
 
 path = "C:\\Users\\Administrator\\Desktop\\tools"
