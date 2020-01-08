@@ -29,7 +29,7 @@ elif key == 'sc_center':
 r = svn.remote.RemoteClient(url)
 files = list(r.list())
 
-max_num = 20
+max_num = 10
 if args_length == 4 and sys.argv[2] == '-n':
     max_num = int(sys.argv[3])
 
