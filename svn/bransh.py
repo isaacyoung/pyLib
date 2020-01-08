@@ -47,5 +47,5 @@ for f in files[length:]:
         author = log.author
     if msg is None:
         msg = ""
-    print(f + " " + msg + " " + author)
+    print("{0:<20}\t{1:<15}\t{2:<25}".format(f, author, msg, chr(12288)))
     # break
