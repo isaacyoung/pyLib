@@ -29,7 +29,7 @@ elif key == 'sc_center':
 r = svn.remote.RemoteClient(url)
 files = list(r.list())
 
-max_num = 10
+max_num = 20
 if args_length == 4 and sys.argv[2] == '-n':
     max_num = int(sys.argv[3])
 
@@ -42,8 +42,10 @@ for f in files[length:]:
     logs = r.log_default(stop_on_copy=True)
 
     for log in logs:
+        # print(log)
         msg = log.msg
+        author = log.author
     if msg is None:
         msg = ""
-    print(f + " " + msg)
+    print(f + " " + msg + " " + author)
     # break
