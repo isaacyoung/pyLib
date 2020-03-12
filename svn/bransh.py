@@ -7,10 +7,11 @@ import ctypes
 args_length = len(sys.argv)
 if args_length == 1:
     print('params list:')
-    print('%10s' % 'center','unified center branshes version',sep=' --> ')
-    print('%10s' % 'auth','unified auth branshes version',sep=' --> ')
+    print('%10s' % 'center/ct','unified center branshes version',sep=' --> ')
+    print('%10s' % 'auth/at','unified auth branshes version',sep=' --> ')
 
-    print('%10s' % 'sc_center','local center branshes version',sep=' --> ')
+    print('%10s' % 'sc_center/sct','local center branshes version',sep=' --> ')
+    print('%10s' % 'compus/cm','compus branshes version',sep=' --> ')
     print('')
 
     print('additional param:')
@@ -19,12 +20,15 @@ if args_length == 1:
 
 key = sys.argv[1]
 
-if key == 'center':
+if key == 'center' or key == 'ct':
     url = 'http://192.168.68.12/svn/app/unifiedcenter/branches/'
-elif key == 'auth':
+elif key == 'auth' or key == 'at':
     url = 'http://192.168.68.12/svn/app/unifiedauth/branches/'
-elif key == 'sc_center':
+elif key == 'sc_center' or key == 'sct':
     url = 'http://192.168.68.12/svn/app/paymenthall/branches/'
+elif key == 'compus' or key == 'cm':
+    url = 'http://192.168.68.12/svn/app/compus/branches/'
+
 
 r = svn.remote.RemoteClient(url)
 files = list(r.list())
